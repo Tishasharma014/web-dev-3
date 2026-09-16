@@ -41,6 +41,37 @@ const tourRoutes = require("./route/tourRoutes");
 
 app.use("/api", tourRoutes);
 
+const middleware =(req, res, next) => {
+   console.log("Middleware executed");
+    next();
+}
+const middleware2 =(req, res, next) => {
+    console.log("Middleware2 executed");
+    next();
+
+}
+
+app.use(middleware)
+app.use(middleware2);
+const logger =(req, req next) =>{
+    console.log('${req.method} ${req.url}');
+   console.log("Request Headers:", req.headers);
+    next()
+}
+
+const checkAge =(req, res, next) => {
+    const age = 18;
+    if (age <18){
+        return res.status(403).json({ message: "Access denied.You must be at least 18 years old"})
+    }
+    next();
+}
+const middleware1 = (req, res,next) =>{
+    console.log("Middleware 1 executed")
+    next();
+}
+
+
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000")
