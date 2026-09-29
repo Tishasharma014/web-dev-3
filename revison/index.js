@@ -12,12 +12,12 @@
 // const filepath = Path.join(__dirname, 'example.txt}');
 // console.log('File Path: ${filePath}');
 
-const fs = require('fs');
-//create a file 
-fs.writeFileSync('example.txt', 'Hello World!', (err) =>{
-    if (err) throw err;
-    console.log('File created successfully.');
-});
+// const fs = require('fs');
+// //create a file 
+// fs.writeFileSync('example.txt', 'Hello World!', (err) =>{
+//     if (err) throw err;
+//     console.log('File created successfully.');
+// });
 
 //Delete the file
 // fs.unlink('example.txt', (err) => {
@@ -26,10 +26,46 @@ fs.writeFileSync('example.txt', 'Hello World!', (err) =>{
 // });
 
 //delete the file after 5 sec
-setTimeout(() => {
-    fs.unlink('example.txt', (err) => {
-        if (err) throw err;
-        console.log('File deleted successfully after 5 seconds.');
+// setTimeout(() => {
+//     fs.unlink('example.txt', (err) => {
+//         if (err) throw err;
+//         console.log('File deleted successfully after 5 seconds.');
 
-    });
-}, 5000);
+//     });
+// }, 5000);
+
+// const fs =require('fs');
+// fs.readFile('file.txt','utf8', (err, data) =>{
+//     if (err) {
+//         console.error('Error reading file:',err);
+//         return;
+//     }
+//     console.log('File Content:');
+//     console.log(data);
+// });
+
+// const fsP = require('fs/promises');
+
+// async function readFileAsync() {
+//     try {
+//         const data = await fsP.readFile('file.txt', 'utf-8');
+//         console.log('File content');
+//         console.log(data);
+    
+//     } catch (error) {
+//         console.error('Error reading files:', error);
+//     }
+// }
+// readFileAsync();
+
+
+//SHA-256 hash use
+// const crypto = require('crypto');
+// const hash = crypto.createHash('sha256');
+// hash.update('Hello World!');
+// const digest = hash.digest('hex');
+// console.log(`SHA-256 Hash: ${digest}`);
+
+//UUID-like random ID
+// console.log(crypto.randomUUID());
+
