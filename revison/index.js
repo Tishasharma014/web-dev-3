@@ -69,3 +69,42 @@
 //UUID-like random ID
 // console.log(crypto.randomUUID());
 
+//process object
+
+ const process =require('process');
+require('dotenv').config();
+// const data = process.env.PORT;
+// const PORT = process.env.PORT || 5000;
+// console.log(PORT);
+
+// console.log('process');
+
+// HTTP SERVER
+const http = require('http');
+const PORT = process.env.PORT || 5000;
+
+const server = http.createServer((req, res) =>{
+if(req.method == 'GET' && req.url ==='/'){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<h1> Hello World!!</h1>');
+    res.write('<p>This is a simple HTTP server</p>');
+    res.write('<p>Environment Variable PORT:' + PORT + '</p>');
+    res.end();
+}else if(req.method ==='GET' && req.url ==='/about'{
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<h1>About Page</h1>');
+    res.write('<p>This is the about page of the simple HTTP server</p>');
+    res.end();
+};
+else(
+    res.writeHead(404, {'Content-Type': 'text/html'});
+    res.write('<h1>404 Not Found</h1>');
+    res.end();
+
+});
+
+server.listen(PORT, () =>{
+    console.log(`Server is running on port ${PORT}
+        `);
+});
+
