@@ -1,0 +1,30 @@
+# web-dev-3
+
+Node.js / Express practice projects from my web development course.
+
+| Folder | What it is |
+| --- | --- |
+| `lab1-utility-toolkit/` | Lab 1: small Node utilities (calculator, dice, file manager, HTTP server, custom module) |
+| `lab-2-student-api/` | Lab 2: Student REST API with Express routes and logging middleware |
+| `tour-api/` | Tour packages REST API (MVC: routes, controller, model, JSON data file) |
+
+## Running a project
+
+Each folder is independent. `cd` into it, then:
+
+```bash
+npm install      # not needed for lab1-utility-toolkit
+npm run dev      # or: node app.js / node index.js
+```
+
+## Tour API endpoints (`tour-api`, port 3000)
+
+| Method | Path | Description |
+| --- | --- | --- |
+| GET | `/api/tours` | All tours |
+| GET | `/api/tours/:id` | One tour by id |
+| GET | `/api/tours/search?destination=Goa` | Search by destination |
+| GET | `/api/tours/price?minPrice=500&maxPrice=1500` | Search by price range |
+| POST | `/api/tours` | Add a tour |
+| PUT | `/api/tours/:id` | Update a tour |
+| DELETE | `/api/tours/:id` | Delete a tour |
